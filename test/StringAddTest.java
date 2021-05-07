@@ -14,12 +14,12 @@ class StringAddTest {
       assertEquals("pankaj",str.getStr());
   }
 
-    @Test
+/*    @Test
     public final void whenMoreThan2NumbersAreUsedThenExceptionIsThrown() {
         Assertions.assertThrows(RuntimeException.class, () -> {
             StringAdd.add("1,2,3");
         });
-    }
+    }*/
     @Test
     public final void when2NumbersAreUsedThenNoExceptionIsThrown() {
         StringAdd.add("1,2");
@@ -45,5 +45,10 @@ class StringAddTest {
     @Test
     public final void whenTwoNumbersAreUsedThenReturnValueIsTheirSum() {
         Assert.assertEquals(100+1, StringAdd.add("100,1"));
+    }
+
+    @Test
+    public final void whenAnyNumberOfNumbersIsUsedThenReturnValuesAreTheirSums() {
+        Assert.assertEquals(3+6+15+18+46+33, StringAdd.add("3,6,15,18,46,33"));
     }
 }
