@@ -61,4 +61,12 @@ class StringAddTest {
     public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
         Assert.assertEquals(3+6+15, StringAdd.add("//;\n3;6;15"));
     }
+
+    @Test
+    public final void whenNegativeNumberIsUsedThenRuntimeExceptionIsThrown() {
+       Exception exc =  Assertions.assertThrows(RuntimeException.class, () -> {
+            StringAdd.add("3,-6,15,18,-3,46,33");
+        });
+       assertTrue(exc.getMessage().equals("Negative Numbers exists "+"[-6, -3]"));
+    }
 }
