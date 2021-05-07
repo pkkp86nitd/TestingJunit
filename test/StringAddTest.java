@@ -54,6 +54,11 @@ class StringAddTest {
 
     @Test
     public final void whenNewLineIsUsedBetweenNumbersThenReturnValuesAreTheirSums() {
-        Assert.assertEquals(3+6+15, StringAdd.add("3,6n15"));
+        Assert.assertEquals(3+6+15, StringAdd.add("3,6\n15"));
+    }
+
+    @Test
+    public final void whenDelimiterIsSpecifiedThenItIsUsedToSeparateNumbers() {
+        Assert.assertEquals(3+6+15, StringAdd.add("//;\n3;6;15"));
     }
 }
