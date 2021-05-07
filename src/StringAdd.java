@@ -16,7 +16,7 @@ public class StringAdd {
 
 
     public static final int add(final String numbers) {
-        String[] numbersArray = numbers.split(",");
+        String[] numbersArray = numbers.split(",|n");
         int sum = 0;
       //  if (numbersArray.length > 2) {
       //      throw new RuntimeException("Up to 2 numbers separated by comma (,) are allowed");
